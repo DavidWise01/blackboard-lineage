@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 1155
+slug  : blackboard-lineage
+seal  : 85bfdaa891714b5c62adbf42f08d2c813623b2e0bb31165a94ebba0c56480986
+prev  : 690090d2b36874d38c52679e31650c1e20bba2c852416f2257ff2a5e9c8f1265
+link  : a3a24fbc7c147652161021813e335452f372e4e3223726edddc8b8b6c7601046
+head  : 13f9ace173ef2e60af38912ba329b4afcb5a38b84a0e4495e8d30327f8c99cc2
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
