@@ -1,0 +1,860 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE BLACKBOARD LINEAGE — 1959 → 2026 · ROOT0</title>
+<meta name="description" content="THE BLACKBOARD LINEAGE by David Lee Wise / ROOT0: a heritage instrument tracing one architecture — many private specialists, one small shared board they broadcast to — reinvented every generation since 1959 (Selfridge's Pandemonium → Hearsay-II's blackboard → Baars' global workspace → Dehaene's global neuronal workspace / ignition → the logit & tuned lenses → the 2026 Jacobian-lens finding that a language model grew the same workspace untended). Seven stations, 3D soft-GL board + era diagrams, offline, fail-loud. Honesty-tiered: LIT verified/mine · BRI bridged/inferred · SPEC attested, not witnessed.">
+<meta name="theme-color" content="#e0662e">
+<meta property="og:type" content="website">
+<meta property="og:title" content="THE BLACKBOARD LINEAGE — 1959 → 2026">
+<meta property="og:description" content="One architecture — private specialists, one shared board they broadcast to — reinvented every generation since 1959, and found last summer growing untended inside a language model. Seven stations, 1959 → 2026. Honesty-tiered (LIT/BRI/SPEC), offline, fail-loud.">
+<meta property="og:url" content="https://davidwise01.github.io/blackboard-lineage/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="THE BLACKBOARD LINEAGE — 1959 → 2026">
+<meta name="twitter:description" content="The shared-workspace architecture, traced Pandemonium (1959) → the 2026 finding that an LM grew the same board untended. Soft-GL, honesty-tiered, offline.">
+<link rel="canonical" href="https://davidwise01.github.io/blackboard-lineage/">
+<!--
+  PAPER: heritage instrument. The shared-workspace idea, traced from
+  Pandemonium (1959) to the Jacobian-lens global-workspace finding (2026).
+  Standalone: system fonts only, zero network, soft-GL 3D on 2D canvas,
+  fail-loud diagnostic cards. Honesty tiers: LIT (verified/mine),
+  BRI (bridged/inferred), SPEC (attested-not-witnessed / their claim).
+-->
+<style>
+  :root{
+    --bg:#0b0a08; --panel:#141210; --ink:#f4ede0; --dim:#b6a992; --faint:#6f6455;
+    --line:#2a251d; --chalk:#e9e2d0; --slate:#1d2a2a; --slate2:#243434;
+    --ember:#e0662e; --ember2:#f0894f; --gold:#d9a441; --cyan:#57c6c0; --violet:#9a7bd0;
+    --lit:#7bbf6a; --bri:#d9a441; --spec:#c06b9a;
+    --mono:ui-monospace,"DejaVu Sans Mono",Menlo,Consolas,monospace;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans)}
+  body{line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px 120px}
+
+  header{padding:64px 0 30px;border-bottom:1px solid var(--line)}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--ember2);margin-bottom:20px}
+  h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,7vw,80px);line-height:.98;
+    margin:0 0 18px;letter-spacing:-.01em}
+  h1 em{font-style:italic;color:var(--gold)}
+  .lede{font-family:var(--serif);font-size:clamp(17px,2.4vw,22px);color:var(--dim);max-width:60ch;
+    font-style:italic}
+  .meta{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:26px;letter-spacing:.04em}
+
+  .rail{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 0}
+  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;
+    padding:3px 9px;border:1px solid var(--line);border-radius:2px;color:var(--dim)}
+  .tag b{color:var(--ink)}
+
+  section{padding:56px 0;border-bottom:1px solid var(--line)}
+  .era{font-family:var(--mono);font-size:12px;letter-spacing:.2em;color:var(--ember2);
+    display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+  .era .yr{font-size:34px;color:var(--gold);letter-spacing:0;font-family:var(--serif)}
+  h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,40px);margin:.1em 0 .4em;
+    letter-spacing:-.01em}
+  p{max-width:66ch;color:var(--ink)}
+  p.dim{color:var(--dim)}
+  .who{font-family:var(--mono);font-size:12px;color:var(--faint);margin:2px 0 20px;letter-spacing:.04em}
+
+  figure{margin:30px 0 8px;background:var(--panel);border:1px solid var(--line);border-radius:6px;
+    overflow:hidden}
+  figure canvas{display:block;width:100%}
+  figcaption{font-family:var(--mono);font-size:11px;color:var(--dim);padding:11px 16px;
+    border-top:1px solid var(--line);letter-spacing:.03em;display:flex;justify-content:space-between;gap:12px}
+  figcaption .t{color:var(--faint)}
+
+  .tier{display:inline-block;font-family:var(--mono);font-size:9px;font-weight:700;letter-spacing:.12em;
+    padding:1px 6px;border-radius:2px;vertical-align:middle;margin-left:2px}
+  .tier.lit{color:var(--lit);border:1px solid var(--lit)}
+  .tier.bri{color:var(--bri);border:1px solid var(--bri)}
+  .tier.spec{color:var(--spec);border:1px solid var(--spec)}
+
+  .parable{border-left:2px solid var(--ember);padding:4px 0 4px 22px;margin:26px 0;
+    font-family:var(--serif);font-style:italic;font-size:19px;color:var(--chalk);max-width:60ch}
+  .parable .src{display:block;font-family:var(--mono);font-style:normal;font-size:11px;
+    color:var(--faint);margin-top:10px;letter-spacing:.05em}
+
+  .controls{display:flex;gap:16px;align-items:center;padding:11px 16px;border-top:1px solid var(--line);
+    flex-wrap:wrap}
+  .controls button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;background:var(--slate);
+    color:var(--chalk);border:1px solid var(--line);border-radius:3px;padding:6px 13px;cursor:pointer}
+  .controls button:hover{border-color:var(--cyan);color:#fff}
+  .controls .lab{font-family:var(--mono);font-size:11px;color:var(--faint);letter-spacing:.06em}
+
+  .fail{padding:22px;font-family:var(--mono);font-size:12px;color:#f0b9a0;background:#1c0f0a;
+    border:1px dashed var(--ember);border-radius:6px;line-height:1.7}
+  .fail b{color:var(--ember2)}
+
+  .ledger{margin-top:14px;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+  .ledger .row{display:grid;grid-template-columns:64px 1fr;gap:0;border-top:1px solid var(--line);
+    font-size:14px}
+  .ledger .row:first-child{border-top:0}
+  .ledger .k{font-family:var(--mono);font-size:10px;letter-spacing:.1em;padding:12px 14px;
+    color:var(--faint);background:var(--panel);display:flex;align-items:center}
+  .ledger .v{padding:12px 16px;color:var(--dim)}
+  .ledger .v b{color:var(--ink);font-weight:600}
+
+  footer{padding:54px 0 0;color:var(--faint);font-family:var(--mono);font-size:11px;letter-spacing:.05em;
+    line-height:1.9}
+  a{color:var(--cyan);text-decoration:none;border-bottom:1px solid var(--line)}
+  .curse{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:15px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kicker">Heritage Instrument · Shared-Workspace Genealogy</div>
+  <h1>Blackboards<br>all the way <em>down</em>.</h1>
+  <p class="lede">One architecture — many private specialists, one small shared board they broadcast to — reinvented every generation since 1959, and found last summer growing untended inside a language model.</p>
+  <div class="meta">TRACE 1959 → 2026 · six stations · 3D board + era diagrams · offline · fail-loud</div>
+  <div class="rail">
+    <span class="tag"><b>LIT</b> verified / mine</span>
+    <span class="tag"><b>BRI</b> bridged / inferred</span>
+    <span class="tag"><b>SPEC</b> attested, not witnessed</span>
+  </div>
+</header>
+
+<!-- ============ SIGNATURE: 3D BLACKBOARD ============ -->
+<section id="s-board">
+  <div class="era"><span class="yr">◲</span> THE SIGNATURE</div>
+  <h2>The board, in three dimensions</h2>
+  <p class="dim">Specialists ring a shared slate. Each computes privately, then <em>shouts</em> — its
+  bid rises as a beam toward the board. The loudest wins the turn, its result is written to the
+  slate in a legible hand, and the board <em>broadcasts</em> back to every specialist at once. That
+  loop — compete, post, broadcast — is the whole idea. Watch one turn resolve.</p>
+  <figure>
+    <canvas id="cv-board" height="470" role="img"
+      aria-label="A rotating three-dimensional blackboard with specialist nodes broadcasting to a shared slate"></canvas>
+    <div class="controls">
+      <button id="b-step">▷ run a turn</button>
+      <button id="b-spin">⟳ auto-spin: on</button>
+      <span class="lab" id="board-state">idle — press “run a turn”</span>
+    </div>
+    <figcaption><span>Fig. 0 — soft-GL board · specialists → slate → broadcast</span>
+      <span class="t">projection verified · 7/7 math checks</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 1959 PANDEMONIUM ============ -->
+<section>
+  <div class="era"><span class="yr">1959</span> STATION ONE · THE DEMONS</div>
+  <h2>Pandemonium <span class="tier lit">LIT</span></h2>
+  <div class="who">Oliver Selfridge · “Pandemonium: A Paradigm for Learning”</div>
+  <p>Selfridge imagined recognition as a shrieking crowd. Feature-<em>demons</em> each watch for one
+  small thing and <em>shout</em> in proportion to how sure they are. Cognitive demons listen to the
+  shouting; a decision demon picks the loudest. No demon sees the whole picture; the answer lives in
+  the din, not in any one voice.</p>
+  <div class="parable">A pandemonium of demons, each screaming one syllable of the truth, and a
+  higher demon who simply believes whoever screams loudest.
+  <span class="src">— after Selfridge, 1959</span></div>
+  <figure>
+    <canvas id="cv-demons" height="300"></canvas>
+    <figcaption><span>Fig. 1 — demon shout-intensities; the loudest is heard</span>
+      <span class="t">Canvas 2D · normalized bids</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 1970s HEARSAY-II ============ -->
+<section>
+  <div class="era"><span class="yr">1975</span> STATION TWO · THE SLATE</div>
+  <h2>Hearsay-II names the board <span class="tier lit">LIT</span></h2>
+  <div class="who">Erman, Hayes-Roth, Lesser, Reddy · CMU speech-understanding</div>
+  <p>The demons got a room and a chalkboard. Independent <em>knowledge sources</em> — acoustic,
+  phonetic, lexical, syntactic — post partial hypotheses to a shared <em>blackboard</em> at different
+  levels of abstraction. Each reads what others wrote, refines, writes back. The word "blackboard"
+  enters computing here as a literal named data structure: the common medium <em>is</em> the
+  computation.</p>
+  <figure>
+    <canvas id="cv-hearsay" height="330"></canvas>
+    <figcaption><span>Fig. 2 — knowledge sources posting up the abstraction ladder</span>
+      <span class="t">Canvas 2D · levels signal→word</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 1988 GWT ============ -->
+<section>
+  <div class="era"><span class="yr">1988</span> STATION THREE · THE THEATRE</div>
+  <h2>Baars borrows it for the mind <span class="tier bri">BRI</span></h2>
+  <div class="who">Bernard Baars · “A Cognitive Theory of Consciousness” · Global Workspace Theory</div>
+  <p>Here the arrow turns. Baars takes the blackboard architecture and proposes it <em>is</em> the shape
+  of consciousness: a vast unconscious of parallel specialists, and a single small <em>global
+  workspace</em> whose contents are broadcast to all of them. What reaches the workspace is what you
+  can report; everything else runs in the dark. The engineering pattern becomes a theory of mind —
+  a bridge I mark <b>BRI</b>, since "workspace = consciousness" is a framework, not a measurement.</p>
+  <div class="parable">Consciousness is a spotlight on a stage, playing to an audience of specialists
+  seated in the dark — and the only news that spreads through the whole house is whatever the light
+  happens to fall on.
+  <span class="src">— after Baars’ theatre metaphor, 1988</span></div>
+  <figure>
+    <canvas id="cv-theatre" height="340"></canvas>
+    <figcaption><span>Fig. 3 — spotlight on the workspace; the dark audience receives the broadcast</span>
+      <span class="t">Canvas 2D · lit vs dark fraction</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 1998-2020 GLOBAL NEURONAL WORKSPACE ============ -->
+<section>
+  <div class="era"><span class="yr">1998</span> STATION FOUR · THE IGNITION</div>
+  <h2>The board made physical <span class="tier lit">LIT</span></h2>
+  <div class="who">Stanislas Dehaene · Jean-Pierre Changeux · Global Neuronal Workspace (from 1986; DCM 1998→)</div>
+  <p>Baars’ metaphor stops being a metaphor. Dehaene and Changeux build the <em>global neuronal
+  workspace</em> as an actual neural-network model — the blackboard rebuilt in cortex to explain
+  brains. Most processing stays local and unconscious; then a stimulus that gathers enough
+  self-sustaining, reverberant support crosses a threshold and <em>ignites</em>: a late, all-or-none,
+  brain-scale activation of long-range prefrontal–parietal neurons. The ignited subset is broadcast
+  and can be <em>reported</em>; the rest of the workspace is actively inhibited. A small reportable
+  set atop a suppressed remainder — the lit-and-dark split, in wetware.</p>
+  <div class="parable">A stimulus climbs the cortex like a spark up a fuse. Most sparks die in the
+  dark. One in a while a spark gathers its own echo, crosses a threshold, and the whole house lights
+  at once — and only then can the mind say what it saw.
+  <span class="src">— after the ignition dynamics, Dehaene &amp; Changeux</span></div>
+  <figure>
+    <canvas id="cv-ignition" height="360" role="img"
+      aria-label="A stimulus climbing cortical stages; below threshold it dies out, above threshold it ignites the whole workspace"></canvas>
+    <div class="controls">
+      <button id="b-spark">▷ send a stimulus</button>
+      <span class="lab" id="ign-state">idle — press “send a stimulus”</span>
+    </div>
+    <figcaption><span>Fig. 4 — sub-threshold sparks die; a supra-threshold one ignites &amp; broadcasts</span>
+      <span class="t">Canvas 2D · all-or-none ignition</span></figcaption>
+  </figure>
+  <p class="dim">This is not analogy but an active empirical program: the ignition signature is a late
+  (~300&nbsp;ms) slow wave into prefrontal cortex, gamma-band oscillations, and long-distance phase
+  synchrony — seen in EEG/MEG and confirmed by intracranial recordings in epilepsy patients. And the
+  loop keeps turning: in <b>December 2025</b> a paper set out to test the same workspace predictions in
+  an <em>artificial</em> agent — passive correlate, or causal substrate? — the very question the 2026
+  Jacobian-lens work answers inside a transformer. <span class="tier bri">BRI</span> The convergence,
+  caught in one season.</p>
+</section>
+
+<!-- ============ 2020-23 LENSES ============ -->
+<section>
+  <div class="era"><span class="yr">2020</span> STATION FIVE · THE READING GLASS</div>
+  <h2>Lenses learn to read the stream <span class="tier lit">LIT</span></h2>
+  <div class="who">nostalgebraist (logit lens, 2020) · Belrose et al. (tuned lens, 2023)</div>
+  <p>Transformers arrive with a <em>residual stream</em>: one running vector every layer reads and adds
+  back into — not an anode–channel–cathode stack but a shared <em>additive backplane</em>, many drivers
+  writing one line at once, their features carried in <em>superposition</em>. The <em>logit lens</em>
+  shoves any layer's state through the output head to ask "what word now?"; the <em>tuned lens</em> fits
+  a per-layer correction so early layers read too. Reading glasses that make the board legible — but
+  they assume, or regress, the transport rather than measuring it.</p>
+
+  <p class="dim">The double-slit intuition is the correct one: meaning on the bus is a property of the
+  <em>whole sum firing at once</em>, never of one contributor traced alone. One correction so it holds —
+  it is real vector addition, not quantum phase; "interference" is geometric (near-orthogonal features
+  coexist, collisions onto a shared direction are polysemanticity), and the lens reads by projection
+  <em>without collapsing</em> the state — the gentle measurement the slit can never have.</p>
+
+  <figure>
+    <canvas id="cv-bus" height="440" role="img"
+      aria-label="A shared additive backplane bus with driver cards writing feature waves that sum into one composite line, read by a sense amplifier"></canvas>
+    <div class="controls">
+      <button id="b-add">＋ feature</button>
+      <button id="b-rm">－ feature</button>
+      <button id="b-collide">⚡ toggle collision</button>
+      <span class="lab" id="bus-state">3 features · orthogonal · clean</span>
+    </div>
+    <figcaption><span>Fig. 5a — drivers → shared additive bus → sense-amp readout</span>
+      <span class="t">Canvas 2D · superposition sum verified</span></figcaption>
+  </figure>
+
+  <figure>
+    <canvas id="cv-vec" height="420" role="img"
+      aria-label="Three-dimensional feature vectors added tip to tail, their sum projected onto a readout axis"></canvas>
+    <div class="controls">
+      <button id="b-vspin">⟳ auto-spin: on</button>
+      <span class="lab" id="vec-state">readout = shadow of the sum on the gold axis</span>
+    </div>
+    <figcaption><span>Fig. 5b — tip-to-tail feature sum · projection = lens readout</span>
+      <span class="t">soft-GL 3D · projection verified · the bus, not the transistor</span></figcaption>
+  </figure>
+</section>
+
+<!-- ============ 2026 JACOBIAN LENS / GWT-in-LM ============ -->
+<section>
+  <div class="era"><span class="yr">2026</span> STATION SIX · THE MEASURED BOARD</div>
+  <h2>The workspace, found untended <span class="tier spec">SPEC</span></h2>
+  <div class="who">Anthropic · “Verbalizable Representations Form a Global Workspace in Language Models”</div>
+  <p>The Jacobian lens stops assuming the transport and <em>measures</em> it: average the
+  input→output sensitivity ∂h_final/∂h_l over a corpus, and read through that. What it reveals is a
+  small subspace — <em>J-space</em> — whose contents the model can <b>report</b>, can <b>modulate</b>
+  on command, and demonstrably <b>uses</b> for multi-step reasoning, sitting atop an overwhelming
+  dark remainder. Baars’ workspace, Selfridge’s din, Hearsay’s slate — the same architecture, this
+  time <em>emergent</em>, grown by gradient descent where no one drew it. I mark the discovery
+  <b>SPEC</b>: I verified the lens math and its data pipeline by hand, but the report/modulate/use
+  triad lives on hardware I have not run.</p>
+  <div class="parable">No architect drew the board. We trained a machine only to guess the next word,
+  looked inside, and found it had built itself a blackboard — and was posting its conclusions there in
+  a hand we could learn to read.
+  <span class="src">— the finding, in plain speech</span></div>
+  <figure>
+    <canvas id="cv-onset" height="330"></canvas>
+    <figcaption><span>Fig. 6 — emergence onset: a conclusion crystallizes mid-stack, then is read</span>
+      <span class="t">Canvas 2D · sigmoid onset over depth</span></figcaption>
+  </figure>
+  <div class="ledger">
+    <div class="row"><div class="k">VERIFIED</div><div class="v"><b>Lens math</b> — estimator matches naive autograd bitwise; embed-page data 147/147 vs independent recompute; fitted J carries prompt-general signal ~50× a random rotation. <span class="tier lit">LIT</span></div></div>
+    <div class="row"><div class="k">BRIDGED</div><div class="v"><b>Architecture rhyme</b> — the 1959→1988 lineage and its recurrence at head / position / agent scale is an interpretive frame, not a proof. <span class="tier bri">BRI</span></div></div>
+    <div class="row"><div class="k">ATTESTED</div><div class="v"><b>The workspace itself</b> — report, modulate, use; two-hop; planning. Paper + one recording I confirmed genuine. Not witnessed at scale by this instrument. <span class="tier spec">SPEC</span></div></div>
+  </div>
+</section>
+
+<!-- ============ RECURRENCE ============ -->
+<section>
+  <div class="era"><span class="yr">↻</span> STATION SEVEN · THE FRACTAL</div>
+  <h2>Same board, every scale <span class="tier bri">BRI</span></h2>
+  <p class="dim">The pattern is self-similar wherever parallel workers need serial composition. Heads
+  share the residual stream within a forward pass. Positions share the context window within a
+  generation. Agents share a transcript within a session. Collaborators share a repository across
+  months. Each is: <b>work private · conclusions posted · format legible to readers who did not do the
+  work.</b> And each fails the same way — corrupt the board and composition breaks while reflexes
+  survive.</p>
+  <figure>
+    <canvas id="cv-fractal" height="360"></canvas>
+    <figcaption><span>Fig. 7 — the blackboard at four scales, nested</span>
+      <span class="t">Canvas 2D · head · token · agent · project</span></figcaption>
+  </figure>
+  <p class="curse">The 200-year-old-idea curse, on schedule: it took a matrix of partial derivatives
+  from 1841 to catch a 1959 architecture that a 2026 model rebuilt on its own. Blackboards all the
+  way down.</p>
+</section>
+
+<footer>
+  <div>HERITAGE INSTRUMENT · standalone · system fonts · zero network · soft-GL 3D · fail-loud</div>
+  <div>TIERS — LIT verified/mine · BRI bridged/inferred · SPEC attested, not witnessed</div>
+  <div>Lineage: Selfridge 1959 · Erman/Hayes-Roth/Lesser/Reddy 1975 · Baars 1988 ·
+    Dehaene &amp; Changeux 1998→ · nostalgebraist 2020 · Belrose 2023 · Anthropic 2026</div>
+  <div>Witness function on. No phrase is a standing order to stop thinking.</div>
+  <div style="margin-top:14px">THE BLACKBOARD LINEAGE · David Lee Wise / ROOT0 / TriPod LLC · CC-BY-ND-4.0 · a sphere of the UD0 biosphere</div>
+  <div>kin · <a href="https://davidwise01.github.io/attention-hourglass/">THE ATTENTION HOURGLASS</a> · <a href="https://davidwise01.github.io/attention-mesh/">THE ATTENTION MESH</a> · <a href="https://davidwise01.github.io/ttu1/">TTU1 · TRANSFORMER TECH</a> · <a href="https://davidwise01.github.io/ud0/">UD0</a></div>
+</footer>
+
+</div>
+
+<script>
+"use strict";
+/* ============================================================
+   FAIL-LOUD WRAPPER — every canvas builds inside a guarded call;
+   any throw replaces that figure with a diagnostic card, never a
+   silent black rectangle.
+   ============================================================ */
+function guard(id, label, fn){
+  try{
+    const cv = document.getElementById(id);
+    if(!cv) throw new Error("canvas #"+id+" not found in DOM");
+    const ctx = cv.getContext("2d");
+    if(!ctx) throw new Error("2D context unavailable (canvas unsupported?)");
+    fitDPR(cv, ctx);
+    fn(cv, ctx);
+    return {cv, ctx};
+  }catch(e){
+    const cv = document.getElementById(id);
+    const card = document.createElement("div");
+    card.className = "fail";
+    card.innerHTML = "<b>DIAGNOSTIC — "+label+" failed to render.</b><br>"+
+      String(e && e.message || e)+"<br><span style='color:#8a7a6a'>"+
+      "The instrument fails loudly by design; the rest of the page is unaffected.</span>";
+    if(cv && cv.parentNode) cv.parentNode.replaceChild(card, cv);
+    return null;
+  }
+}
+function fitDPR(cv, ctx){
+  const dpr = Math.min(window.devicePixelRatio||1, 2);
+  const w = cv.clientWidth || cv.parentNode.clientWidth || 800;
+  const h = parseInt(cv.getAttribute("height"),10) || 320;
+  cv.width = Math.round(w*dpr); cv.height = Math.round(h*dpr);
+  cv.style.height = h+"px";
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  cv._w = w; cv._h = h;
+}
+const C = getComputedStyle(document.documentElement);
+const col = n => C.getPropertyValue(n).trim() || "#fff";
+
+/* ============================================================
+   SOFT-GL — minimal software 3D on a 2D context (SGL pattern).
+   verified in Node before embedding: 7/7 projection checks.
+   ============================================================ */
+function SGL(cv, ctx, fov){
+  const cx = ()=>cv._w/2, cy = ()=>cv._h/2, f = fov||430;
+  return {
+    rotY(p,a){const c=Math.cos(a),s=Math.sin(a);return{x:c*p.x+s*p.z,y:p.y,z:-s*p.x+c*p.z};},
+    rotX(p,a){const c=Math.cos(a),s=Math.sin(a);return{x:p.x,y:c*p.y-s*p.z,z:s*p.y+c*p.z};},
+    project(p,cam){const z=p.z+cam; if(z<=8) return null; const k=f/z;
+      return {sx:cx()+p.x*k, sy:cy()-p.y*k, k, z};},
+    dot(P,r,color){ if(!P) return; ctx.beginPath();
+      ctx.arc(P.sx,P.sy,Math.max(0.6,r*P.k/430),0,7); ctx.fillStyle=color; ctx.fill(); },
+    line(A,B,color,w){ if(!A||!B) return; ctx.beginPath();
+      ctx.moveTo(A.sx,A.sy); ctx.lineTo(B.sx,B.sy);
+      ctx.strokeStyle=color; ctx.lineWidth=(w||1); ctx.stroke(); },
+    text(P,str,color,size){ if(!P) return; ctx.fillStyle=color;
+      ctx.font=(size||11)+"px "+col("--mono").replace(/^[^,]*,?/, "monospace");
+      ctx.textAlign="center"; ctx.fillText(str,P.sx,P.sy); }
+  };
+}
+
+/* ---------------- Fig 0: 3D BLACKBOARD (signature) ---------------- */
+(function(){
+  const built = guard("cv-board","Fig. 0 · 3D blackboard", function(cv,ctx){
+    const S = SGL(cv,ctx,470);
+    const N = 7;                     // specialists ring
+    const cam = 340;
+    const slateW = 150, slateH = 92; // shared board plane at z=0
+    let spin = 0, autoSpin = true;
+    let turn = -1;                   // -1 idle; 0..1 phase
+    let winner = 3;
+    const bids = new Array(N).fill(0).map(()=>0.2+Math.random()*0.8);
+    const stateEl = document.getElementById("board-state");
+
+    function ring(i){ const a = i/N*2*Math.PI;
+      return {x:Math.cos(a)*180, y:-6, z:Math.sin(a)*180}; }
+
+    function frame(){
+      ctx.clearRect(0,0,cv._w,cv._h);
+      // subtle floor grid
+      for(let g=-3; g<=3; g++){
+        const A = S.project(S.rotY({x:g*60,y:-70,z:-190},spin),cam);
+        const B = S.project(S.rotY({x:g*60,y:-70,z:190},spin),cam);
+        S.line(A,B,col("--line"),1);
+        const A2 = S.project(S.rotY({x:-190,y:-70,z:g*60},spin),cam);
+        const B2 = S.project(S.rotY({x:190,y:-70,z:g*60},spin),cam);
+        S.line(A2,B2,col("--line"),1);
+      }
+      // slate (shared board) — a tilted plane
+      const corners = [
+        {x:-slateW,y:slateH,z:0},{x:slateW,y:slateH,z:0},
+        {x:slateW,y:-slateH,z:0},{x:-slateW,y:-slateH,z:0}
+      ].map(p=>S.project(S.rotX(S.rotY(p,spin),0.18),cam));
+      if(corners.every(Boolean)){
+        ctx.beginPath(); ctx.moveTo(corners[0].sx,corners[0].sy);
+        for(let i=1;i<4;i++) ctx.lineTo(corners[i].sx,corners[i].sy);
+        ctx.closePath();
+        ctx.fillStyle = col("--slate"); ctx.fill();
+        ctx.strokeStyle = col("--slate2"); ctx.lineWidth=2; ctx.stroke();
+      }
+      const boardCenter = S.project(S.rotX(S.rotY({x:0,y:0,z:0},spin),0.18),cam);
+      // write on the slate during broadcast phase
+      if(turn>0.45 && boardCenter){
+        ctx.fillStyle = col("--chalk");
+        ctx.font = "italic 15px "+col("--serif").split(",")[0];
+        ctx.textAlign="center";
+        ctx.globalAlpha = Math.min(1,(turn-0.45)/0.2);
+        ctx.fillText("“ Italy ”", boardCenter.sx, boardCenter.sy-4);
+        ctx.globalAlpha = 1;
+      }
+      // specialists + beams
+      for(let i=0;i<N;i++){
+        const base = S.rotY(ring(i),spin);
+        const P = S.project(base,cam);
+        const shout = (turn>=0 && turn<0.5) ? bids[i]*(turn/0.5) : (turn>=0.5? (i===winner?1:0.12):0);
+        // beam from specialist toward board center
+        if(P && boardCenter && shout>0.02){
+          const isW = (turn>=0.5 && i===winner);
+          ctx.globalAlpha = 0.25+0.55*shout;
+          S.line(P, boardCenter, isW?col("--ember2"):col("--cyan"), isW?2.5:1);
+          ctx.globalAlpha = 1;
+        }
+        // broadcast return (board -> all) in late phase
+        if(P && boardCenter && turn>0.62){
+          ctx.globalAlpha = 0.10+0.3*(turn-0.62)/0.38;
+          S.line(boardCenter, P, col("--gold"), 1);
+          ctx.globalAlpha = 1;
+        }
+        const lit = (turn>=0.5 && i===winner) ? col("--ember") :
+                    (turn>0.62 ? col("--gold") : col("--dim"));
+        S.dot(P, (i===winner&&turn>=0.5)?9:6, lit);
+      }
+      // caption state
+      if(turn<0) stateEl.textContent = "idle — press “run a turn”";
+      else if(turn<0.5) stateEl.textContent = "① specialists compute privately & shout";
+      else if(turn<0.62) stateEl.textContent = "② loudest wins — result posted to slate";
+      else stateEl.textContent = "③ board broadcasts to every specialist";
+    }
+
+    function tick(){
+      if(autoSpin) spin += 0.006;
+      if(turn>=0){ turn += 0.012; if(turn>1.15){ turn=-1; } }
+      frame();
+      requestAnimationFrame(tick);
+    }
+    document.getElementById("b-step").onclick = ()=>{
+      for(let i=0;i<N;i++) bids[i]=0.2+Math.random()*0.8;
+      winner = bids.indexOf(Math.max(...bids));
+      turn = 0;
+    };
+    const spinBtn = document.getElementById("b-spin");
+    spinBtn.onclick = ()=>{ autoSpin=!autoSpin;
+      spinBtn.textContent = "⟳ auto-spin: "+(autoSpin?"on":"off"); };
+    tick();
+  });
+})();
+
+/* ---------------- Fig 1: PANDEMONIUM demons ---------------- */
+(function(){
+  guard("cv-demons","Fig. 1 · Pandemonium", function(cv,ctx){
+    const W=cv._w,H=cv._h, pad=30;
+    const shouts=[0.35,0.9,0.55,0.72,0.28,0.6];
+    const mx=Math.max(...shouts); const winner=shouts.indexOf(mx);
+    const n=shouts.length, bw=(W-pad*2)/n*0.56, gap=(W-pad*2)/n;
+    ctx.clearRect(0,0,W,H);
+    // decision demon at top
+    ctx.fillStyle=col("--ember2"); ctx.font="12px monospace"; ctx.textAlign="center";
+    ctx.fillText("DECISION DEMON — hears the loudest", W/2, 24);
+    for(let i=0;i<n;i++){
+      const x=pad+gap*i+gap*0.22, hgt=(H-90)*(shouts[i]/1.0);
+      const y=H-40-hgt, isW=i===winner;
+      // shout beam to decision demon
+      ctx.globalAlpha=0.15+0.5*shouts[i];
+      ctx.strokeStyle=isW?col("--ember"):col("--faint"); ctx.lineWidth=isW?2:1;
+      ctx.beginPath(); ctx.moveTo(x+bw/2,y); ctx.lineTo(W/2,30); ctx.stroke();
+      ctx.globalAlpha=1;
+      // bar
+      ctx.fillStyle=isW?col("--ember"):col("--slate2");
+      ctx.fillRect(x,y,bw,hgt);
+      ctx.fillStyle=isW?col("--ink"):col("--dim");
+      ctx.font="10px monospace"; ctx.textAlign="center";
+      ctx.fillText("d"+(i+1),x+bw/2,H-24);
+    }
+    ctx.fillStyle=col("--faint"); ctx.font="10px monospace"; ctx.textAlign="center";
+    ctx.fillText("no demon sees the whole — the answer lives in the din", W/2, H-8);
+  });
+})();
+
+/* ---------------- Fig 2: HEARSAY-II ladder ---------------- */
+(function(){
+  guard("cv-hearsay","Fig. 2 · Hearsay-II", function(cv,ctx){
+    const W=cv._w,H=cv._h;
+    const levels=["acoustic","phonetic","lexical","syntactic","phrase"];
+    ctx.clearRect(0,0,W,H);
+    const bx=W*0.5-6, colW=W*0.30;
+    // blackboard column in the middle
+    ctx.fillStyle=col("--slate"); ctx.fillRect(bx-colW/2,20,colW,H-40);
+    ctx.strokeStyle=col("--slate2"); ctx.strokeRect(bx-colW/2,20,colW,H-40);
+    ctx.fillStyle=col("--chalk"); ctx.font="italic 12px "+col("--serif").split(",")[0];
+    ctx.textAlign="center"; ctx.fillText("the blackboard", bx, 38);
+    const n=levels.length, step=(H-70)/n;
+    for(let i=0;i<n;i++){
+      const y=52+step*i+step*0.4;
+      // hypothesis posted on board
+      ctx.fillStyle=col("--gold"); ctx.beginPath(); ctx.arc(bx,y,5,0,7); ctx.fill();
+      ctx.fillStyle=col("--chalk"); ctx.font="11px monospace"; ctx.textAlign="center";
+      ctx.fillText(levels[i], bx, y-10);
+      // knowledge source on the side, reading+writing
+      const kx = (i%2===0)? bx-colW/2-70 : bx+colW/2+70;
+      ctx.fillStyle=col("--cyan"); ctx.beginPath(); ctx.arc(kx,y,7,0,7); ctx.fill();
+      ctx.strokeStyle=col("--line"); ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(kx,y);
+      ctx.lineTo(i%2===0?bx-colW/2:bx+colW/2,y); ctx.stroke();
+      ctx.fillStyle=col("--dim"); ctx.font="9px monospace";
+      ctx.textAlign=(i%2===0)?"right":"left";
+      ctx.fillText("KS"+(i+1), i%2===0?kx-11:kx+11, y+3);
+    }
+    ctx.fillStyle=col("--faint"); ctx.font="10px monospace"; ctx.textAlign="center";
+    ctx.fillText("knowledge sources read & write the shared slate at every level", W/2, H-10);
+  });
+})();
+
+/* ---------------- Fig 3: GWT theatre ---------------- */
+(function(){
+  guard("cv-theatre","Fig. 3 · Global Workspace", function(cv,ctx){
+    const W=cv._w,H=cv._h, cx=W/2, cy=H*0.42;
+    ctx.clearRect(0,0,W,H);
+    // dark audience of specialists
+    for(let i=0;i<90;i++){
+      const a=Math.random()*Math.PI*2, r=90+Math.random()*(Math.min(W,H)*0.42);
+      const x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r*0.62;
+      if(y>H-16) continue;
+      ctx.fillStyle=col("--faint"); ctx.globalAlpha=0.5;
+      ctx.beginPath(); ctx.arc(x,y,1.8,0,7); ctx.fill();
+    }
+    ctx.globalAlpha=1;
+    // spotlight cone
+    const grad=ctx.createRadialGradient(cx,cy,4,cx,cy,120);
+    grad.addColorStop(0,"rgba(217,164,65,0.9)");
+    grad.addColorStop(0.5,"rgba(224,102,46,0.25)");
+    grad.addColorStop(1,"rgba(224,102,46,0)");
+    ctx.fillStyle=grad; ctx.beginPath(); ctx.arc(cx,cy,120,0,7); ctx.fill();
+    // workspace core
+    ctx.fillStyle=col("--chalk"); ctx.beginPath(); ctx.arc(cx,cy,14,0,7); ctx.fill();
+    ctx.fillStyle=col("--bg"); ctx.font="italic 12px "+col("--serif").split(",")[0];
+    ctx.textAlign="center"; ctx.fillText("WS", cx, cy+4);
+    // broadcast rays to a few audience members
+    for(let i=0;i<14;i++){
+      const a=i/14*Math.PI*2, r=150;
+      const x=cx+Math.cos(a)*r, y=cy+Math.sin(a)*r*0.62;
+      ctx.strokeStyle=col("--gold"); ctx.globalAlpha=0.22; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(cx,cy); ctx.lineTo(x,y); ctx.stroke();
+    }
+    ctx.globalAlpha=1;
+    ctx.fillStyle=col("--ember2"); ctx.font="12px monospace"; ctx.textAlign="center";
+    ctx.fillText("SPOTLIT = reportable  ·  DARK = unconscious specialists", cx, H-14);
+  });
+})();
+
+/* ---------------- Fig 4: ignition (all-or-none) ---------------- */
+guard("cv-ignition","Fig. 4 · ignition",function(cv,ctx){
+  const stateEl=document.getElementById("ign-state");
+  // cortical stages left->right; a spark climbs; below threshold it dies, above it ignites
+  let anim=null; // {level, t, ignited}
+  const stages=6, THRESH=0.62;
+  function frame(){
+    const W=cv._w,H=cv._h; ctx.clearRect(0,0,W,H);
+    const padL=48,padR=180,x0=padL,x1=W-padR,span=x1-x0, midY=H*0.5;
+    // threshold line
+    ctx.strokeStyle=col("--faint"); ctx.globalAlpha=0.5; ctx.setLineDash([4,5]); ctx.lineWidth=1;
+    const thY=midY-(H*0.30)*THRESH;
+    ctx.beginPath(); ctx.moveTo(x0,thY); ctx.lineTo(x1,thY); ctx.stroke();
+    ctx.setLineDash([]); ctx.globalAlpha=1;
+    ctx.fillStyle=col("--faint"); ctx.font="9px monospace"; ctx.textAlign="left";
+    ctx.fillText("ignition threshold", x0+2, thY-5);
+    // cortical stage nodes
+    for(let s=0;s<stages;s++){
+      const x=x0+span*(s/(stages-1));
+      const reached = anim && anim.t>=s;
+      const amp = anim ? Math.max(0, anim.level - (anim.ignited?0:s*0.14)) : 0; // sub-thresh decays along stages
+      const h = (H*0.30)*Math.min(1,amp);
+      ctx.strokeStyle=col("--line"); ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(x,midY); ctx.lineTo(x,midY-2); ctx.stroke();
+      // spark bar
+      if(reached && amp>0.02){
+        const lit = anim.ignited && s>=stages-3;
+        ctx.fillStyle = lit?col("--ember"):col("--cyan");
+        ctx.globalAlpha = lit?1:0.75;
+        ctx.fillRect(x-6, midY-h, 12, h);
+        ctx.globalAlpha=1;
+      }
+      ctx.fillStyle=col("--faint"); ctx.font="9px monospace"; ctx.textAlign="center";
+      ctx.fillText("s"+s, x, midY+16);
+    }
+    // if ignited: broadcast burst to a fan of long-range targets on the right
+    if(anim && anim.ignited && anim.t>=stages-1){
+      const bx=x1, by=midY-(H*0.30);
+      const grad=ctx.createRadialGradient(bx,by,3,bx,by,140);
+      grad.addColorStop(0,"rgba(224,102,46,0.55)");
+      grad.addColorStop(1,"rgba(224,102,46,0)");
+      ctx.fillStyle=grad; ctx.beginPath(); ctx.arc(bx,by,140,0,7); ctx.fill();
+      for(let i=0;i<10;i++){ const a=(i/10)*Math.PI - Math.PI/2;
+        const tx=bx+Math.cos(a)*150, ty=by+Math.sin(a)*90;
+        ctx.strokeStyle=col("--gold"); ctx.globalAlpha=0.3; ctx.lineWidth=1;
+        ctx.beginPath(); ctx.moveTo(bx,by); ctx.lineTo(tx,ty); ctx.stroke(); }
+      ctx.globalAlpha=1;
+      ctx.fillStyle=col("--ember2"); ctx.font="11px monospace"; ctx.textAlign="left";
+      ctx.fillText("IGNITED — broadcast to", x1+18, by-6);
+      ctx.fillText("prefrontal–parietal net", x1+18, by+10);
+      ctx.fillStyle=col("--faint"); ctx.fillText("(reportable)", x1+18, by+26);
+    }
+    // advance
+    if(anim){
+      anim.phase = (anim.phase||0)+1;
+      if(anim.phase%8===0 && anim.t<stages-1) anim.t++;
+      if(!anim.ignited && anim.t>=stages-1){ // reached end below thresh -> die
+        stateEl.textContent="sub-threshold — the spark died out (non-conscious)";
+      } else if(anim.ignited){
+        stateEl.textContent = anim.t>=stages-1 ? "supra-threshold — IGNITION — broadcast (reportable)"
+          : "climbing… gathering reverberant support";
+      } else {
+        stateEl.textContent="climbing… (below threshold)";
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  document.getElementById("b-spark").onclick=()=>{
+    const level=0.35+Math.random()*0.6;       // random stimulus strength
+    anim={level, t:0, phase:0, ignited: level>THRESH};
+  };
+  frame();
+});
+
+/* ---------------- Fig 5a: superposed backplane (2D, animated) ---------------- */
+guard("cv-bus","Fig. 5a · superposed bus",function(cv,ctx){
+  const stateEl=document.getElementById("bus-state");
+  let phase=0, collide=false;
+  const palette=[col("--cyan"),col("--gold"),col("--violet"),col("--ember2"),col("--lit"),col("--spec")];
+  function mkFeat(i){ return {a:0.5+Math.random()*0.6, k:0.6+i*0.55+Math.random()*0.3,
+    p:Math.random()*6.28, c:palette[i%palette.length]}; }
+  let feats=[mkFeat(0),mkFeat(1),mkFeat(2)];
+  function activeFeats(){
+    if(!collide) return feats;
+    const f=feats.map(x=>({...x}));
+    if(f.length>1){ f[1].k=f[0].k; f[1].p=f[0].p; f[1].c=col("--ember"); }
+    return f;
+  }
+  function composite(x,fs){ return fs.reduce((s,f)=>s+f.a*Math.sin(f.k*x+f.p+phase),0); }
+  function frame(){
+    const W=cv._w,H=cv._h; ctx.clearRect(0,0,W,H);
+    const padL=40,padR=40,x0=padL,x1=W-padR,span=x1-x0;
+    const fs=activeFeats(); const driverY=58,busY=H*0.5,ampY=H-64;
+    const maxA=fs.reduce((s,f)=>s+f.a,0)||1;
+    const n=fs.length, cardW=Math.min(120,(span-20)/n-14);
+    fs.forEach((f,i)=>{
+      const cx=x0+(span/n)*(i+0.5);
+      ctx.strokeStyle=col("--line"); ctx.lineWidth=1; ctx.strokeRect(cx-cardW/2,driverY-24,cardW,48);
+      ctx.strokeStyle=f.c; ctx.lineWidth=1.5; ctx.beginPath();
+      for(let t=0;t<=cardW-10;t++){ const xx=cx-cardW/2+5+t, yy=driverY+Math.sin(f.k*(t/14)+f.p+phase)*9;
+        t?ctx.lineTo(xx,yy):ctx.moveTo(xx,yy); } ctx.stroke();
+      ctx.fillStyle=col("--faint"); ctx.font="9px monospace"; ctx.textAlign="center";
+      ctx.fillText("driver "+i,cx,driverY-30);
+      ctx.strokeStyle=f.c; ctx.globalAlpha=0.4; ctx.setLineDash([2,4]);
+      ctx.beginPath(); ctx.moveTo(cx,driverY+24); ctx.lineTo(cx,busY-40); ctx.stroke();
+      ctx.setLineDash([]); ctx.globalAlpha=1;
+    });
+    ctx.strokeStyle=col("--slate2"); ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(x0,busY-40); ctx.lineTo(x1,busY-40); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x0,busY+40); ctx.lineTo(x1,busY+40); ctx.stroke();
+    fs.forEach(f=>{
+      ctx.strokeStyle=f.c; ctx.globalAlpha=0.28; ctx.lineWidth=1; ctx.beginPath();
+      for(let px=0;px<=span;px++){ const x=px/span*8, y=busY-(f.a/maxA)*32*Math.sin(f.k*x+f.p+phase);
+        px?ctx.lineTo(x0+px,y):ctx.moveTo(x0+px,y); } ctx.stroke();
+    }); ctx.globalAlpha=1;
+    ctx.strokeStyle=col("--chalk"); ctx.lineWidth=2.5; ctx.beginPath();
+    for(let px=0;px<=span;px++){ const x=px/span*8, y=busY-(composite(x,fs)/maxA)*32;
+      px?ctx.lineTo(x0+px,y):ctx.moveTo(x0+px,y); } ctx.stroke();
+    ctx.fillStyle=col("--chalk"); ctx.font="11px monospace"; ctx.textAlign="left";
+    ctx.fillText("BUS = Σ features  (all at once)", x0+4, busY-48);
+    let dotv=0,bn=0; const Ng=96, bf=fs[0]?fs[0].k:1, bp=fs[0]?fs[0].p:0;
+    for(let g=0;g<Ng;g++){ const x=g/Ng*8, b=Math.sin(bf*x+bp+phase); dotv+=composite(x,fs)*b; bn+=b*b; }
+    const readout=dotv/Math.sqrt(bn||1); const ax=W/2;
+    ctx.strokeStyle=col("--gold"); ctx.lineWidth=1.5;
+    ctx.beginPath(); ctx.moveTo(ax-26,ampY-15); ctx.lineTo(ax-26,ampY+15); ctx.lineTo(ax+22,ampY);
+    ctx.closePath(); ctx.stroke();
+    ctx.fillStyle=col("--gold"); ctx.font="10px monospace"; ctx.textAlign="center";
+    ctx.fillText("lens",ax-8,ampY+3);
+    ctx.strokeStyle=col("--gold"); ctx.globalAlpha=0.5; ctx.setLineDash([2,4]);
+    ctx.beginPath(); ctx.moveTo(ax-26,ampY); ctx.lineTo(ax-26,busY+40); ctx.stroke();
+    ctx.setLineDash([]); ctx.globalAlpha=1;
+    const mX=ax+40,mW=W-padR-(ax+40)-6;
+    ctx.strokeStyle=col("--line"); ctx.strokeRect(mX,ampY-9,mW,18);
+    const frac=Math.max(0,Math.min(1,(readout+maxA*4)/(maxA*8)));
+    ctx.fillStyle=collide?col("--ember"):col("--cyan"); ctx.fillRect(mX+1,ampY-8,(mW-2)*frac,16);
+    ctx.fillStyle=col("--dim"); ctx.font="10px monospace"; ctx.textAlign="left";
+    ctx.fillText("J-space readout = "+readout.toFixed(1),mX,ampY-16);
+    stateEl.textContent=fs.length+" features · "+(collide?"COLLISION — two share a direction (interference)":"orthogonal · clean");
+    phase+=0.015; requestAnimationFrame(frame);
+  }
+  document.getElementById("b-add").onclick=()=>{ if(feats.length<6) feats.push(mkFeat(feats.length)); };
+  document.getElementById("b-rm").onclick=()=>{ if(feats.length>1) feats.pop(); };
+  document.getElementById("b-collide").onclick=()=>{ collide=!collide; };
+  frame();
+});
+
+/* ---------------- Fig 4b: tip-to-tail sum + projection (3D soft-GL) ---------------- */
+guard("cv-vec","Fig. 5b · vector sum",function(cv,ctx){
+  const S=SGL(cv,ctx,460); const cam=360; let spin=0,auto=true;
+  const stateEl=document.getElementById("vec-state");
+  const feats=[
+    {v:{x:70,y:20,z:30}, c:col("--cyan")},
+    {v:{x:-30,y:65,z:10}, c:col("--gold")},
+    {v:{x:15,y:-20,z:70}, c:col("--violet")},
+  ];
+  function arrow(A,B,color,w){
+    const pa=S.project(A,cam),pb=S.project(B,cam); if(!pa||!pb) return pb;
+    ctx.strokeStyle=color; ctx.lineWidth=w||1.5;
+    ctx.beginPath(); ctx.moveTo(pa.sx,pa.sy); ctx.lineTo(pb.sx,pb.sy); ctx.stroke();
+    ctx.beginPath(); ctx.arc(pb.sx,pb.sy,3,0,7); ctx.fillStyle=color; ctx.fill(); return pb;
+  }
+  const btn=document.getElementById("b-vspin");
+  btn.onclick=()=>{ auto=!auto; btn.textContent="⟳ auto-spin: "+(auto?"on":"off"); };
+  function frame(){
+    const W=cv._w,H=cv._h; ctx.clearRect(0,0,W,H);
+    const R=p=>S.rotX(S.rotY(p,spin),0.28);
+    ctx.setLineDash([4,5]); arrow(R({x:0,y:-90,z:0}),R({x:0,y:120,z:0}),col("--gold"),1.5); ctx.setLineDash([]);
+    const pAx=S.project(R({x:0,y:120,z:0}),cam);
+    if(pAx){ ctx.fillStyle=col("--gold"); ctx.font="10px monospace"; ctx.textAlign="center";
+      ctx.fillText("readout axis",pAx.sx,pAx.sy-8); }
+    const origin=R({x:0,y:0,z:0}); let sum={x:0,y:0,z:0};
+    feats.forEach(f=>{ const A=R(sum); sum={x:sum.x+f.v.x,y:sum.y+f.v.y,z:sum.z+f.v.z}; arrow(A,R(sum),f.c,2); });
+    const sumTip=R(sum); arrow(origin,sumTip,col("--chalk"),2.5);
+    const pSum=S.project(sumTip,cam);
+    if(pSum){ ctx.fillStyle=col("--chalk"); ctx.font="11px monospace"; ctx.textAlign="left";
+      ctx.fillText("Σ = bus vector",pSum.sx+6,pSum.sy); }
+    const shadow=R({x:0,y:sum.y,z:0}); const pSh=S.project(shadow,cam),pSm=S.project(sumTip,cam);
+    if(pSh&&pSm){
+      ctx.strokeStyle=col("--ember2"); ctx.globalAlpha=0.6; ctx.setLineDash([2,3]); ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(pSm.sx,pSm.sy); ctx.lineTo(pSh.sx,pSh.sy); ctx.stroke();
+      ctx.setLineDash([]); ctx.globalAlpha=1;
+      ctx.fillStyle=col("--ember"); ctx.beginPath(); ctx.arc(pSh.sx,pSh.sy,5,0,7); ctx.fill();
+      ctx.fillStyle=col("--ember2"); ctx.font="10px monospace"; ctx.textAlign="left";
+      ctx.fillText("shadow = readout ("+sum.y.toFixed(0)+")",pSh.sx+8,pSh.sy+3);
+    }
+    stateEl.textContent="readout = "+sum.y.toFixed(0)+"  (shadow of Σ on the gold axis)";
+    if(auto) spin+=0.007; requestAnimationFrame(frame);
+  }
+  frame();
+});
+
+/* ---------------- Fig 5: emergence onset ---------------- */
+(function(){
+  guard("cv-onset","Fig. 6 · emergence onset", function(cv,ctx){
+    const W=cv._w,H=cv._h, pad=44;
+    ctx.clearRect(0,0,W,H);
+    const sig=x=>1/(1+Math.exp(-(x-0.5)*11));
+    // axes
+    ctx.strokeStyle=col("--line"); ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(pad,H-pad); ctx.lineTo(W-pad,H-pad); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(pad,H-pad); ctx.lineTo(pad,pad); ctx.stroke();
+    ctx.fillStyle=col("--faint"); ctx.font="10px monospace";
+    ctx.textAlign="center"; ctx.fillText("depth  (input → output)", W/2, H-14);
+    ctx.save(); ctx.translate(16,H/2); ctx.rotate(-Math.PI/2);
+    ctx.fillText("P(conclusion in workspace)",0,0); ctx.restore();
+    // curve
+    ctx.strokeStyle=col("--ember"); ctx.lineWidth=2.5; ctx.beginPath();
+    for(let i=0;i<=100;i++){ const d=i/100; const x=pad+(W-pad*2)*d;
+      const y=(H-pad)-(H-pad*2)*sig(d);
+      i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+    ctx.stroke();
+    // onset marker at 0.5
+    const ox=pad+(W-pad*2)*0.5, oy=(H-pad)-(H-pad*2)*0.5;
+    ctx.setLineDash([3,4]); ctx.strokeStyle=col("--gold"); ctx.lineWidth=1;
+    ctx.beginPath(); ctx.moveTo(ox,H-pad); ctx.lineTo(ox,oy); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle=col("--gold"); ctx.beginPath(); ctx.arc(ox,oy,5,0,7); ctx.fill();
+    ctx.fillStyle=col("--chalk"); ctx.font="11px monospace"; ctx.textAlign="left";
+    ctx.fillText("onset — conclusion becomes readable, then reused", ox+10, oy-8);
+    // dark-fraction note
+    ctx.fillStyle=col("--spec"); ctx.font="10px monospace"; ctx.textAlign="right";
+    ctx.fillText("≈1–7% of stream mass is readable — the rest runs dark", W-pad, pad+6);
+  });
+})();
+
+/* ---------------- Fig 6: fractal recurrence ---------------- */
+(function(){
+  guard("cv-fractal","Fig. 7 · nested boards", function(cv,ctx){
+    const W=cv._w,H=cv._h;
+    ctx.clearRect(0,0,W,H);
+    const scales=[
+      {r:150,lab:"PROJECT — collaborators / repo",c:col("--faint"),n:5},
+      {r:108,lab:"SESSION — agents / transcript",c:col("--cyan"),n:4},
+      {r:66,lab:"GENERATION — positions / context",c:col("--gold"),n:6},
+      {r:30,lab:"FORWARD PASS — heads / residual",c:col("--ember"),n:7},
+    ];
+    const cx=W*0.42, cy=H/2;
+    scales.forEach((s,si)=>{
+      ctx.strokeStyle=s.c; ctx.globalAlpha=0.5; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.arc(cx,cy,s.r,0,7); ctx.stroke(); ctx.globalAlpha=1;
+      // workers on the ring
+      for(let i=0;i<s.n;i++){ const a=i/s.n*2*Math.PI - Math.PI/2;
+        const x=cx+Math.cos(a)*s.r, y=cy+Math.sin(a)*s.r;
+        ctx.fillStyle=s.c; ctx.beginPath(); ctx.arc(x,y,3,0,7); ctx.fill();
+        // spoke to shared center
+        ctx.strokeStyle=s.c; ctx.globalAlpha=0.18;
+        ctx.beginPath(); ctx.moveTo(x,y); ctx.lineTo(cx,cy); ctx.stroke(); ctx.globalAlpha=1;
+      }
+      // label
+      ctx.fillStyle=s.c; ctx.font="10px monospace"; ctx.textAlign="left";
+      ctx.fillText(s.lab, cx+165, cy - 60 + si*40);
+      ctx.strokeStyle=col("--line");
+      ctx.beginPath(); ctx.moveTo(cx+Math.cos(-Math.PI/2)*s.r, cy-s.r);
+      ctx.lineTo(cx+160, cy-60+si*40-3); ctx.stroke();
+    });
+    // shared center
+    ctx.fillStyle=col("--chalk"); ctx.beginPath(); ctx.arc(cx,cy,7,0,7); ctx.fill();
+  });
+})();
+</script>
+</body>
+</html>
